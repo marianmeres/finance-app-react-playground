@@ -5,7 +5,7 @@ Potrebujem este vela veci vstrebat a urcite aj nastudovat Redux a celkovo
 React-acke best practices pri vacsich aplikaciach, ale [zaver je jasny](#zaver)...
 
 ## Demo & source
-http://marian.meres.sk/mmfa/public/
+http://marian.meres.sk/mmfa/public/  
 https://github.com/marianmeres/finance-app-react-playground
 
 ## Lokalne spustenie
