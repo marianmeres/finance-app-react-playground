@@ -2,7 +2,7 @@
 # Interne poznamky, alebo hratky s reactom pokracuju...
 
 Potrebujem este vela veci vstrebat a urcite aj nastudovat Redux a celkovo 
-React-acke best practices pri vacsich aplikaciach, ale [zaver je jasny](#Zaver)...
+React-acke best practices pri vacsich aplikaciach, ale [zaver je jasny](#zaver)...
 
 ## Demo & source
 http://marian.meres.sk/mmfa/public/
@@ -48,7 +48,7 @@ Zmyslom tohoto dema je najma osvojenie si Reactu, nehral som sa uplne s optimali
 celej aplikacie... (Napr. kazdy screen si loaduje data zo storagu zakazdym nanovo, 
 co urcite nie je idealne a pod...)
 
-## (#Zaver)
+## Zaver
 
 [Vsetky](http://vanilla-js.com/) 
 [stare](http://jquery.com/) 
