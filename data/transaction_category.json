@@ -1,0 +1,14 @@
+[
+  {"id": 1,  "type": "debit",  "label": "Ordinary debit"},
+  {"id": 2,  "type": "debit",  "label": "Food"},
+  {"id": 3,  "type": "debit",  "label": "Rent"},
+  {"id": 4,  "type": "debit",  "label": "Leisure"},
+  {"id": 5,  "type": "debit",  "label": "Beer & whisky"},
+  {"id": 6,  "type": "debit",  "label": "Other"},
+
+  {"id": 7,  "type": "credit", "label": "Unknown credit"},
+  {"id": 8,  "type": "credit", "label": "Salary"},
+  {"id": 9,  "type": "credit", "label": "Business"},
+  {"id": 10, "type": "credit", "label": "Lottery"},
+  {"id": 11, "type": "credit", "label": "Other"}
+]

@@ -1,0 +1,29 @@
+{
+  "name": "finance-app-react-playground",
+  "authors": [
+    "Marian Meres <marian@meres.sk>"
+  ],
+  "description": "react playground",
+  "main": "",
+  "keywords": [
+    "react"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.5.4",
+    "app-async-init": "https://github.com/marianmeres/app-async-init.git",
+    "loadjs": "^3.5.0",
+    "underscore": "^1.8.3",
+    "font-awesome": "fontawesome#^4.7.0",
+    "chart.js": "^2.5.0"
+  }
+}

@@ -1,0 +1,67 @@
+
+@mixin screen-outer {
+  width: 100%;
+  height: 100%;
+  background: white;
+  overflow: hidden; // hm... subject of change
+
+  @media only screen and (min-width: $screen-layout-breakpoint) {
+    @include flexcolumn-container();
+    background: $body-bg;
+  }
+}
+
+@mixin screen-inner {
+  width: 100%;
+  height: 100%;
+  background: white;
+  @include flexcolumn-container-left-top();
+
+  @media only screen and (min-width: $screen-layout-breakpoint) {
+    max-width: $screen-layout-breakpoint;
+    max-height: $screen-layout-breakpoint;
+    //max-height: 450px;
+    border-radius: $screen-border-radius;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .15);
+  }
+}
+
+@mixin screen-header {
+  width: 100%;
+  height: $screen-header-height;
+  background: #0099ff;
+  color: white;
+  @media only screen and (min-width: $screen-layout-breakpoint) {
+    border-top-left-radius: $screen-border-radius;
+    border-top-right-radius: $screen-border-radius;
+  }
+}
+
+@mixin screen-body {
+  width: 100%;
+  padding: $screen-padding-rl;
+  background: white;
+  color: $screen-body-color;
+  border-bottom-left-radius: $screen-border-radius;
+  border-bottom-right-radius: $screen-border-radius;
+  flex: 1;
+  overflow: auto;
+  @media only screen and (min-width: $screen-layout-breakpoint) {
+    padding: $screen-padding-rl $screen-padding-rl-large;
+  }
+}
+
+@mixin screen-body-h {
+  font-size: 1.1em;
+  border-bottom: 1px solid $misc-border-color;
+  padding-bottom: .3em;
+  margin: 0 0 1em 0;
+}
+
+@mixin screen-footer {
+  width: 100%;
+  padding: 25px;
+  @media only screen and (min-width: $screen-layout-breakpoint) {
+    padding: $screen-padding-rl $screen-padding-rl-large;
+  }
+}

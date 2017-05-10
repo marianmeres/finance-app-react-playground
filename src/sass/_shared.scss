@@ -1,0 +1,18 @@
+// continue to override bootstrap... see misc/visual-style-example.png
+.btn {
+  text-transform: uppercase;
+  font-size: .8em;
+}
+
+
+
+// besides mixins, create ready to go styles too...
+.#{$bemNs}-screen-outer  { @include screen-outer(); }
+.#{$bemNs}-screen-inner  { @include screen-inner(); }
+.#{$bemNs}-screen-header { @include screen-header(); }
+.#{$bemNs}-screen-body   { @include screen-body(); }
+.#{$bemNs}-screen-body-h { @include screen-body-h(); }
+.#{$bemNs}-screen-footer { @include screen-footer(); }
+
+
+

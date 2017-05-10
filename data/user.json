@@ -1,0 +1,6 @@
+[
+  {"id": 1, "first_name": "John",   "last_name": "Lennon",    "login": "john",   "password": "lennon",    "avatar": "dist/img/john.jpg"},
+  {"id": 2, "first_name": "Paul",   "last_name": "McCartney", "login": "paul",   "password": "mccartney", "avatar": "dist/img/paul.jpg"},
+  {"id": 3, "first_name": "George", "last_name": "Harrison",  "login": "george", "password": "harrison",  "avatar": "dist/img/george.jpg"},
+  {"id": 4, "first_name": "Ringo",  "last_name": "Starr",     "login": "ringo",  "password": "starr",     "avatar": "dist/img/ringo.jpg"}
+]

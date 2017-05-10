@@ -1,0 +1,143 @@
+.#{$bemNs}-index {
+
+  &-content {
+
+  }
+
+  &-accounts {
+
+    // using "th" and "tr" naming intentionally although no table exists
+
+    &-th {
+      @include flexrow-container();
+      border-radius: 3px;
+      border: 1px solid $misc-border-color;
+      font-size: .8em;
+      margin-bottom: 1em;
+      //
+
+      &item {
+        color: gray;
+        padding: .5rem .7rem;
+
+        &__label {
+          flex: 4;
+          &__foot {
+            text-align: right;
+          }
+        }
+
+
+
+        &__sum {
+          flex: 1;
+          border-left: 1px solid $misc-border-color;
+          text-align: center;
+
+          &__pos {
+            color: $green;
+          }
+          &__neg {
+            color: $red;
+          }
+
+          &__foot {
+            border-left: none;
+            text-align: right;
+            font-weight: bold;
+            font-size: .9rem;
+          }
+        }
+      }
+
+      &__foot {
+        margin-top: 1em;
+      }
+    }
+
+    &-trwrap {
+      margin-bottom: .5em;
+
+      @include flexrow-container();
+
+      margin-right: -#{$screen-padding-rl};
+      @media only screen and (min-width: $screen-layout-breakpoint) {
+        margin-right: -#{$screen-padding-rl-large};
+      }
+    }
+
+    &-trspinnerbox {
+      margin-left: -#{$screen-padding-rl};
+      width: $screen-padding-rl;
+      text-align: center;
+
+      @media only screen and (min-width: $screen-layout-breakpoint) {
+        margin-left: -#{$screen-padding-rl-large};
+        width: $screen-padding-rl-large;
+      }
+    }
+
+    &-tr {
+      $bg: #f0f4f6;
+      flex: 1;
+      @include flexrow-container();
+      border-radius: 3px;
+      border: 1px solid $misc-border-color;
+
+      background: $bg;
+      color: inherit;
+      font-size: .9em;
+
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+        background: darken($bg, 5%);
+      }
+
+      &item {
+        padding: 1rem .7rem;
+
+        &__label {
+          flex: 4;
+          line-height: 1.2;
+          small {
+            color: gray;
+          }
+        }
+
+        &__sum {
+          flex: 1;
+          text-align: right;
+          font-weight: bold;
+          color: silver;
+        }
+
+        &__pos {
+          color: $green;
+        }
+        &__neg {
+          color: $red;
+        }
+      }
+    }
+
+    &-trx {
+      text-align: center;
+      width: $screen-padding-rl;
+      color: silver;
+      padding: 1em 0;
+      border: none;
+      background: none;
+      line-height: 1;
+      display: inline-block;
+      margin: 0;
+      @media only screen and (min-width: $screen-layout-breakpoint) {
+        width: $screen-padding-rl-large;
+      }
+    }
+
+
+
+  }
+
+}

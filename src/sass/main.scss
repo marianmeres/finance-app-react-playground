@@ -1,0 +1,27 @@
+// this is our app's main css... importing all components used (maintained by hand)
+
+@import "variables";
+
+// bootstrap modules used...
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/custom-forms";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/utilities/float";
+
+@import "_mixins/flex-helpers";
+@import "_mixins/app-screen-helpers";
+
+// custom shared globals
+@import "shared";
+
+@import "../js/component/Root/root";
+@import "../js/component/Login/login";
+@import "../js/component/Dashboard/dashboard";
+@import "../js/component/Dashboard/Index/index";
+@import "../js/component/Dashboard/User/user";
+@import "../js/component/Dashboard/Transactions/transactions";
+@import "../js/component/Dashboard/Report/report";
+
+@import "../js/component/_ScreenHeader/screenheader";
+@import "../js/component/_Spinner/spinner";

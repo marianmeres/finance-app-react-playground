@@ -1,0 +1,14 @@
+{
+  "name": "app-async-init",
+  "homepage": "https://github.com/marianmeres/app-async-init",
+  "_release": "26f202df64",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "26f202df6492c7ded98dce46baf8ef1d2f5d2813"
+  },
+  "_source": "https://github.com/marianmeres/app-async-init.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/marianmeres/app-async-init.git",
+  "_direct": true
+}

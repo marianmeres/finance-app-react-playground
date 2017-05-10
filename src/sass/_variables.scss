@@ -1,0 +1,38 @@
+// custom bem namespace (must be in sync with app obviously)
+$bemNs: 'mmfa';
+
+// see misc/visual-style-example.png
+$body-bg: #d4d4d4;
+
+// see misc/visual-style-example.png
+//$brand-primary: #0099ff;
+$brand-primary: #1380c9;
+
+// for simplicity, we will render in 2 modes only, "mobile" and "other", and this
+// will be our breakpoint boundary
+$screen-layout-breakpoint: 660px; //42em;
+
+$screen-border-radius: 5px;
+
+// override bootstrap defaults, see misc/visual-style-example.png
+//$btn-padding-x: 1rem;
+$btn-padding-y: .75rem;
+$btn-line-height: 1;
+
+// see misc/visual-style-example.png
+$screen-body-color: #6d6d6d;
+
+$screen-header-height: 55px;
+
+// bootstrap override
+$border-radius: .2rem; // ~3
+$border-radius-lg: .25rem;
+
+//
+$misc-border-color: rgba(0, 0, 0, .15);
+
+$screen-padding-rl: 25px;
+$screen-padding-rl-large: 58px;
+
+//
+@import "../../node_modules/bootstrap/scss/variables";
