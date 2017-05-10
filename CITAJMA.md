@@ -26,6 +26,10 @@ Poznamka: buildovanie nie je vobec testovane pod windows...
 Jediny server request sa robi pri logine, inak vsetky data sa citaju a zapisuju vylucne 
 v localStorage, ktore je synchronne (ale implementacia simuluje chovanie asynchronne).
 
+Poznamka k localStorage: nijak neriesim fallbackovanie... localStorage moze byt 
+problematicky za istych okolnosti (user nastavenia, malo miesta na disku, 
+private browsing v Safari napr. a pod...)
+
 ## Routing
 Nepouzivam tu ziaden sofistikovany routing mechanizmus, vsetko sa toci okolo obycajneho
 ```hashchange```.
