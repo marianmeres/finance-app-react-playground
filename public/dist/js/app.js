@@ -1541,12 +1541,7 @@ var Transactions = function (_React$Component) {
             if (!amt) return console.warn("Ignoring zero amount");
             if (amt > 999999) return alert("This app is not for you. Go consult your private banker!");
 
-            var categs = _App2.default.instance.config.transactionCategories;
-            var defaultCateg = amt < 0 ? categs.filter(function (c) {
-                return c.type === 'debit';
-            })[0].label : categs.filter(function (c) {
-                return c.type === 'credit';
-            })[0].label;
+            var defaultCateg = _App2.default.instance.getCategsForAmt(amt)[0].label;
             var label = prompt("Enter transaction label:", "Untitled");
             if (!label || label.trim() === "") return;
 

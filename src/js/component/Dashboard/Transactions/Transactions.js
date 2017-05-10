@@ -64,10 +64,7 @@ export default class Transactions extends React.Component {
         if (!amt) return console.warn("Ignoring zero amount");
         if (amt > 999999) return alert("This app is not for you. Go consult your private banker!");
 
-        let categs = App.instance.config.transactionCategories;
-        let defaultCateg = amt < 0
-            ? categs.filter((c) => c.type === 'debit')[0].label
-            : categs.filter((c) => c.type === 'credit')[0].label;
+        let defaultCateg = App.instance.getCategsForAmt(amt)[0].label;
         let label = prompt("Enter transaction label:", "Untitled");
         if (!label || label.trim() === "") return;
 
