@@ -1,7 +1,7 @@
 
 # Interne poznamky, alebo hratky s reactom pokracuju...
 
-Potrebujem este vela veci vstrebat a urcite aj nastudovat Redux a celkovo 
+Potrebujem este vela veci vstrebat, nastudovat Redux a aj popozerat 
 React-acke best practices pri vacsich aplikaciach, ale [zaver je jasny](#zaver)...
 
 ## Demo & source
