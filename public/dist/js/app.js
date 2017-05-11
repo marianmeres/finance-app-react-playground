@@ -1587,6 +1587,7 @@ var Transactions = function (_React$Component) {
             if (!this.props.account || !tx) return; // sanity check
             var amt = parseFloat(prompt("New amount:", tx.amount));
             if (!amt || Number.isNaN(amt)) return;
+            if (amt > 999999) return alert("This app is not for you. Go consult your private banker!");
 
             var old = tx.amount;
             tx.amount = amt;
