@@ -9,7 +9,7 @@ http://marian.meres.sk/mmfa/public/
 https://github.com/marianmeres/finance-app-react-playground
 
 ## Lokalne spustenie
-Naklokonvat repozitar niekde pod ```document root``` webservera podporujuceho ```php```
+Naklonovat repozitar niekde pod ```document root``` webservera podporujuceho ```php```
 a nasledne navigovat browser na dany adresar.
 
 ## Build
