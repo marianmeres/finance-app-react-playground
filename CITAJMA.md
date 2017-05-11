@@ -13,7 +13,7 @@ Naklonovat repozitar niekde pod ```document root``` webservera podporujuceho ```
 a nasledne navigovat browser na dany adresar.
 
 ## Build
-```npm install``` a potom najjednoduchsie sucho ```make``` pripadne ```npm run build``` . 
+```npm install``` a potom najjednoduchsie sucho ```make``` pripadne ```npm run build```. 
 Vid ```package.json``` pre viac moznosti. 
 
 Buildovacie skripty su riesene ako manualne jednoucelove kroky volane za sebou 
