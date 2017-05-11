@@ -62,7 +62,7 @@ export default class Transactions extends React.Component {
         let amt = parseFloat(input);
         if (Number.isNaN(amt)) return console.warn(`Ignoring NaN input "${input}"...`);
         if (!amt) return console.warn("Ignoring zero amount");
-        if (amt > 999999) return alert("This app is not for you. Go consult your private banker!");
+        if (Math.abs(amt) > 999999) return alert("This app is not for you. Go consult your private banker!");
 
         let defaultCateg = App.instance.getCategsForAmt(amt)[0].label;
         let label = prompt("Enter transaction label:", "Untitled");
@@ -100,7 +100,7 @@ export default class Transactions extends React.Component {
         if (!this.props.account || !tx) return; // sanity check
         let amt = parseFloat(prompt("New amount:", tx.amount));
         if (!amt || Number.isNaN(amt)) return;
-        if (amt > 999999) return alert("This app is not for you. Go consult your private banker!");
+        if (Math.abs(amt) > 999999) return alert("This app is not for you. Go consult your private banker!");
 
         let old = tx.amount;
         tx.amount = amt;
