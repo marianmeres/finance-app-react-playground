@@ -171,10 +171,48 @@
       border: none;
       background: none;
       line-height: 1;
-      display: inline-block;
+      //display: inline-block;
+      display: block;
       margin: 0;
       @media only screen and (min-width: $screen-layout-breakpoint) {
         width: $screen-padding-rl-large;
+      }
+
+      @media only screen and (min-width: $screen-layout-breakpoint) {
+        &-x__outer {
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          margin-left: 12px;
+          border: 2px solid #efefef;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 1;
+          @include flexcolumn-container();
+          color: gray;
+          font-size: 18px;
+          &:hover {
+            border-color: #95d3fc;
+            color: #1380c9;
+          }
+        }
+
+        &-x__inner {
+          line-height: 1;
+          display: inline-block;
+          margin-top: -2px;
+          color: inherit;
+          &:hover {
+            color: inherit;
+          }
+        }
+      }
+
+
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+        line-height: 1;
       }
     }
 

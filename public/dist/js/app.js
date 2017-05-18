@@ -1474,7 +1474,9 @@ var Transactions = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Transactions.__proto__ || Object.getPrototypeOf(Transactions)).call(this, props));
 
         _this.state = {
-            _pendingTx: false
+            _pendingTx: false,
+            _inputLabelId: null,
+            inputValue: ''
         };
 
         _this.onClickTxDelete = _this.onClickTxDelete.bind(_this);
@@ -1558,17 +1560,52 @@ var Transactions = function (_React$Component) {
     }, {
         key: "onClickUpdateLabel",
         value: function onClickUpdateLabel(tx, e) {
+            e.preventDefault();
+
+            this.setState({
+                inputValue: tx.label,
+                _inputLabelId: tx.id
+            });
+
+            // if (!this.props.account || !tx) return; // sanity check
+            // let input = prompt("New label:", tx.label);
+            // if (!input) return;
+            // tx.label = input.trim();
+            //
+            // this.setState({_pendingTx: tx.id});
+            // let _resetPending = () => this.setState({_pendingTx: false});
+            // this.props.handleTxEdit(this.props.account, tx)
+            //     .then(_resetPending, _resetPending)
+            //     .catch(_resetPending) // still needed if onRejected is already handled?
+        }
+    }, {
+        key: "onChangeTypeInput",
+        value: function onChangeTypeInput(tx, e) {
+            e.preventDefault();
+
+            this.setState({ inputValue: e.target.value });
+        }
+    }, {
+        key: "onInputSubmit",
+        value: function onInputSubmit(tx, e) {
             var _this4 = this;
 
             e.preventDefault();
-            if (!this.props.account || !tx) return; // sanity check
-            var input = prompt("New label:", tx.label);
-            if (!input) return;
-            tx.label = input.trim();
+
+            var input = this.state.inputValue.trim();
+            if (!input.length) {
+                // ignore
+                this.setState({
+                    inputValue: '', _inputLabelId: null
+                });
+                return;
+            }
+
+            tx.label = input; // samotne setnutie
 
             this.setState({ _pendingTx: tx.id });
             var _resetPending = function _resetPending() {
-                return _this4.setState({ _pendingTx: false });
+                return _this4.setState({ _pendingTx: false, _inputLabelId: null, inputValue: '' });
             };
             this.props.handleTxEdit(this.props.account, tx).then(_resetPending, _resetPending).catch(_resetPending); // still needed if onRejected is already handled?
         }
@@ -1769,7 +1806,14 @@ var Transactions = function (_React$Component) {
                             React.createElement(
                                 "div",
                                 { className: B + "-txs-tritem " + B + "-txs-tritem__label" },
-                                React.createElement(
+                                _this7.state._inputLabelId === t.id ? React.createElement(
+                                    "form",
+                                    { onSubmit: _this7.onInputSubmit.bind(_this7, t) },
+                                    React.createElement("input", { type: "text",
+                                        value: _this7.state.inputValue,
+                                        onChange: _this7.onChangeTypeInput.bind(_this7, t)
+                                    })
+                                ) : React.createElement(
                                     "button",
                                     { onClick: _this7.onClickUpdateLabel.bind(_this7, t) },
                                     React.createElement(
@@ -1815,11 +1859,14 @@ var Transactions = function (_React$Component) {
                             "a",
                             { href: "javascript:void(0)", className: B + "-txs-trx",
                                 onClick: _this7.onClickTxDelete.bind(_this7, t) },
-                            React.createElement("i", { className: "fa fa-times-circle", "aria-hidden": "true" }),
                             React.createElement(
                                 "span",
-                                { className: "sr-only" },
-                                "Delete"
+                                { className: B + "-txs-trx-x__outer" },
+                                React.createElement(
+                                    "span",
+                                    { className: B + "-txs-trx-x__inner" },
+                                    "\xD7"
+                                )
                             )
                         )
                     );
@@ -1846,6 +1893,10 @@ var Transactions = function (_React$Component) {
 
     return Transactions;
 }(React.Component);
+
+// <i className="fa fa-times-circle" aria-hidden="true" />
+// <span className="sr-only">Delete</span>
+
 
 exports.default = Transactions;
 },{"../../../App":1,"../../../_lib/mm/utils":4,"../../../model/Account":16,"../../../model/Transaction":17,"../../_ScreenHeader/ScreenHeader":13,"../../_Spinner/Spinner":14}],10:[function(require,module,exports){

@@ -14,7 +14,9 @@ export default class Transactions extends React.Component {
         super(props);
 
         this.state = {
-            _pendingTx: false
+            _pendingTx: false,
+            _inputLabelId: null,
+            inputValue: '',
         };
 
         this.onClickTxDelete = this.onClickTxDelete.bind(this);
@@ -79,13 +81,45 @@ export default class Transactions extends React.Component {
      */
     onClickUpdateLabel(tx, e) {
         e.preventDefault();
-        if (!this.props.account || !tx) return; // sanity check
-        let input = prompt("New label:", tx.label);
-        if (!input) return;
-        tx.label = input.trim();
+
+        this.setState({
+            inputValue: tx.label,
+            _inputLabelId: tx.id,
+        });
+
+        // if (!this.props.account || !tx) return; // sanity check
+        // let input = prompt("New label:", tx.label);
+        // if (!input) return;
+        // tx.label = input.trim();
+        //
+        // this.setState({_pendingTx: tx.id});
+        // let _resetPending = () => this.setState({_pendingTx: false});
+        // this.props.handleTxEdit(this.props.account, tx)
+        //     .then(_resetPending, _resetPending)
+        //     .catch(_resetPending) // still needed if onRejected is already handled?
+    }
+
+    onChangeTypeInput(tx, e) {
+        e.preventDefault();
+
+        this.setState({inputValue: e.target.value});
+    }
+
+    onInputSubmit(tx, e) {
+        e.preventDefault();
+
+        let input = this.state.inputValue.trim();
+        if (!input.length) { // ignore
+            this.setState({
+                inputValue: '', _inputLabelId: null
+            });
+            return;
+        }
+
+        tx.label = input; // samotne setnutie
 
         this.setState({_pendingTx: tx.id});
-        let _resetPending = () => this.setState({_pendingTx: false});
+        let _resetPending = () => this.setState({_pendingTx: false, _inputLabelId: null, inputValue: ''});
         this.props.handleTxEdit(this.props.account, tx)
             .then(_resetPending, _resetPending)
             .catch(_resetPending) // still needed if onRejected is already handled?
@@ -219,9 +253,23 @@ export default class Transactions extends React.Component {
 
                         <div className={`${B}-txs-tr`}>
                             <div className={`${B}-txs-tritem ${B}-txs-tritem__label`}>
-                                <button onClick={this.onClickUpdateLabel.bind(this, t)}>
-                                    <strong>{t.label}</strong>
-                                </button><br/>
+                            {
+                                this.state._inputLabelId === t.id
+                                    ? (
+                                        <form onSubmit={this.onInputSubmit.bind(this, t)}>
+                                            <input type="text"
+                                                value={this.state.inputValue}
+                                                onChange={this.onChangeTypeInput.bind(this, t)}
+                                            />
+                                        </form>
+                                    )
+                                    : (
+                                        <button onClick={this.onClickUpdateLabel.bind(this, t)}>
+                                            <strong>{t.label}</strong>
+                                        </button>
+                                    )
+                            }
+                                <br/>
                                 <small>{new Date(t.created).toLocaleString()}</small>
                             </div>
                             <div className={`${B}-txs-tritem ${B}-txs-tritem__label2`}>
@@ -255,8 +303,11 @@ export default class Transactions extends React.Component {
 
                         <a href="javascript:void(0)" className={`${B}-txs-trx`}
                            onClick={this.onClickTxDelete.bind(this, t)} >
-                            <i className="fa fa-times-circle" aria-hidden="true" />
-                            <span className="sr-only">Delete</span>
+                            <span className={`${B}-txs-trx-x__outer`}>
+                                <span className={`${B}-txs-trx-x__inner`}>
+                                    &times;
+                                </span>
+                            </span>
                         </a>
                     </div>
                     );
@@ -286,3 +337,6 @@ export default class Transactions extends React.Component {
         );
     }
 }
+
+// <i className="fa fa-times-circle" aria-hidden="true" />
+// <span className="sr-only">Delete</span>
