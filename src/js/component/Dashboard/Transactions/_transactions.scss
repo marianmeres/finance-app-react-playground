@@ -178,35 +178,35 @@
         width: $screen-padding-rl-large;
       }
 
-      @media only screen and (min-width: $screen-layout-breakpoint) {
-        &-x__outer {
-          display: inline-block;
-          width: 25px;
-          height: 25px;
-          margin-left: 12px;
-          border: 2px solid #efefef;
-          border-radius: 50%;
-          text-align: center;
-          line-height: 1;
-          @include flexcolumn-container();
-          color: gray;
-          font-size: 18px;
-          &:hover {
-            border-color: #95d3fc;
-            color: #1380c9;
-          }
-        }
-
-        &-x__inner {
-          line-height: 1;
-          display: inline-block;
-          margin-top: -2px;
-          color: inherit;
-          &:hover {
-            color: inherit;
-          }
-        }
-      }
+      //@media only screen and (min-width: $screen-layout-breakpoint) {
+      //  &-x__outer {
+      //    display: inline-block;
+      //    width: 25px;
+      //    height: 25px;
+      //    margin-left: 12px;
+      //    border: 2px solid #efefef;
+      //    border-radius: 50%;
+      //    text-align: center;
+      //    line-height: 1;
+      //    @include flexcolumn-container();
+      //    color: gray;
+      //    font-size: 18px;
+      //    &:hover {
+      //      border-color: #95d3fc;
+      //      color: #1380c9;
+      //    }
+      //  }
+      //
+      //  &-x__inner {
+      //    line-height: 1;
+      //    display: inline-block;
+      //    margin-top: -2px;
+      //    color: inherit;
+      //    &:hover {
+      //      color: inherit;
+      //    }
+      //  }
+      //}
 
 
       &:hover {
